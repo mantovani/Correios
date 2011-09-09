@@ -1,6 +1,7 @@
 <div id="principal" align="center">
 	<h2>Receba a mudança de status por email</h2>
-	<form id="formvalidar" action="[% c.uri_for(c.controller("Correios").action_for("cadastro")) %]" method="post">
+	<p><font color="red">[% error %]</font></p>
+	<form id="formvalidar" action="[% c.uri_for(c.controller("Rastreamento").action_for("cadastro")) %]" method="post">
 		<table>
 			<tr><td>Email</td></tr>
 			<tr><td><input type="text" name="email" id="email"></td></tr>
