@@ -1,2 +1,38 @@
 <p>Pedido cadastrado com sucesso, assim que o status do seu pedido mudar você receberá um email sendo avisado.</p>
 <p>Obrigado!</p>
+
+[% IF status_ok %]
+<p><b>Pedidos Cadastrados!</b></p>
+<table>
+	<tr>
+		<td>Email</td>
+		<td>Pedido</td>
+	[% FOREACH status IN status_ok %]
+	<tr>
+		<td>[% status.email %]</td>
+		<td>[% status.pedido %]</td>
+	</tr>
+	[% END %]
+</table>
+[% END %]
+
+[% IF status_not_ok %]
+<p><b>Pedidos já cadastros anteriormente</b></p>
+<table>
+	<tr>
+		<td>Email</td>
+		<td>Pedido</td>
+	[% FOREACH status IN status_not_ok %]
+	<tr>
+		<td>[% status.email %]</td>
+		<td>[% status.pedido %]</td>
+	</tr>
+	[% END %]
+</table>
+[% END %]
+
+[% IF status.not_ok %]
+
+<h1>1</h1>
+
+[% END %]

@@ -5,7 +5,7 @@
 		<table>
 			<tr><td>Email</td></tr>
 			<tr><td><input type="text" name="email" id="email"></td></tr>
-			<tr><td>Número(s) do(s) Pedido(s) - <small><i>Separado(s) por vírgula. Máximo 500 caracteres</i></small></td></tr>
+			<tr><td>Número(s) do(s) Pedido(s) - <small><i>Separado(s) por vírgula. Máximo 100 caracteres</i></small></td></tr>
 			<tr><td><textarea id="pedido" name="pedido"></textarea></td></tr>
 			<tr><td><input type="submit" value="Receber Notificação de Email"> </td></tr>
 		</table>
@@ -32,7 +32,7 @@ $(document).ready(function(){
 				required: true,
 				ncorreio: true,
 				minlength: 6,
-				maxlength: 500,
+				maxlength: 1000,
 			}
 		}
 	});

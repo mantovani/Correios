@@ -25,11 +25,11 @@ sub cadastro : Chained('base') : PathPart('cadastro') : Args(0) {
     my ( $self, $c ) = @_;
     if ( $c->req->body_params->{pedido} && $c->req->body_params->{'email'} ) {
         my $params = $c->req->body_params;
-        if (   length( $params->{email} ) > 500
-            || length( $params->{pedido} ) > 500 )
+        if (   length( $params->{email} ) > 1000
+            || length( $params->{pedido} ) > 1000 )
         {
             $c->stash->{error} =
-              'O m&aacute;ximo de catecteres permitido &eacute; de 500 =/';
+              'O m&aacute;ximo de caracteres permitido &eacute; de 1000 =/';
             $c->stash->{template} = 'index.tt';
             return;
         }
@@ -39,10 +39,31 @@ sub cadastro : Chained('base') : PathPart('cadastro') : Args(0) {
             return;
         }
 
-        my $pedido = $params->{pedidos};
-        $pedido =~ s/\s//g;
+        my $pedido = $params->{pedido};
+        $pedido =~ s/[^A-Za-z\d,]//g;
+
+        my $add_pedido = sub {
+            my ( $email, $pedido ) = @_;
+            $email =~ s/\s//g;
+            return unless $pedido;
+            if ( $c->model('MongoDB')->cadastrar( $email, $pedido ) ) {
+                push @{ $c->stash->{status_ok} },
+                  { email => $email, pedido => $pedido };
+            }
+            else {
+                push @{ $c->stash->{status_not_ok} },
+                  { email => $email, pedido => $pedido };
+            }
+        };
+
         if ( $pedido =~ /,/ ) {
             my @pedidos = split /,/, $pedido;
+            foreach my $pedido (@pedidos) {
+                $add_pedido->( $params->{email}, $pedido );
+            }
+        }
+        else {
+            $add_pedido->( $params->{email}, $pedido );
         }
 
     }
@@ -51,6 +72,7 @@ sub cadastro : Chained('base') : PathPart('cadastro') : Args(0) {
         $c->stash->{template} = 'index.tt';
         return;
     }
+
 }
 
 =head1 AUTHOR
