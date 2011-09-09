@@ -1,0 +1,23 @@
+#formvalidar
+{
+	margin-left: 1.5px;
+}
+
+#email
+{
+	width: 400px;
+	height: 25px;
+}
+
+#pedido
+{
+	width: 400px;
+	height: 100px;
+}
+
+body {
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+	font-size:15px;
+    margin-right: 20%; 
+    margin-left: 20%; 
+}

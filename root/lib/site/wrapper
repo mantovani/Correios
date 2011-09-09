@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	    <meta name="description" content="Saiba o status do seu pedido pelo e-mail" /> 
+	    <meta name="keywords" content="Correios, notificação, aviso" /> 
+		<script src="/static/js/jquery.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.delegate.js"></script>
+		<link type="text/css" rel="stylesheet" href="/static/styles/main.css" /> 
+    	<title>Correios Notificação</title> 
+	
+	</head> 
+	<body>
+		<center>
+    		<h1><a href="/index">Rastreamento de Objetos por Email</a></h1>
+		    <p>Atenção, esse serviço é só uma API para a interface que o
+				<a href="http://www.correios.com.br/servicos/rastreamento/rastreamento.cfm" target="_blank">Correios</a> oferece</p>
+    		<img src="/static/images/correios.gif"></img>
+   			<br />
+    		<br />
+    		<br />
+		</center>
+	[% content %]
+	
+	[% INCLUDE site/footer.tt %]
+	</body>
+</html>
