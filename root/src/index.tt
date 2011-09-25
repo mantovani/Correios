@@ -10,6 +10,7 @@
 			<tr><td><input type="submit" value="Receber Notificação de Email"> </td></tr>
 		</table>
 	</form>
+	<p><a href="http://twitter.com/mantovanidaniel">@mantovanidaniel</a></p>
 </div>
 <script>
 $(document).ready(function(){
