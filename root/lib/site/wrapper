@@ -15,8 +15,8 @@
 	<body>
 		<center>
     		<h1><a href="/index">Rastreamento de Objetos por Email</a></h1>
-		    <p>Atenção, esse serviço é só uma API para a interface que o
-				<a href="http://www.correios.com.br/servicos/rastreamento/rastreamento.cfm" target="_blank">Correios</a> oferece</p>
+		    <p>Atenção, esse serviço utiliza a interface que o
+				<a href="http://www.correios.com.br/servicos/rastreamento/rastreamento.cfm" target="_blank">Correios</a> oferece.</p>
     		<img src="/static/images/correios.gif"></img>
    			<br />
     		<br />
