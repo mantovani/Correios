@@ -4,7 +4,7 @@
 	<head> 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	    <meta name="description" content="Saiba o status do seu pedido pelo e-mail" /> 
-	    <meta name="keywords" content="Correios, notificação, aviso" /> 
+	    <meta name="keywords" content="Correios, notificação, aviso, rastreamento" /> 
 		<script src="/static/js/jquery.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.validate.js"></script>
 		<script type="text/javascript" src="/static/js/jquery.delegate.js"></script>

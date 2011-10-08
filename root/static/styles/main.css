@@ -21,3 +21,10 @@ body {
     margin-right: 20%; 
     margin-left: 20%; 
 }
+
+.social {
+    display: block; 
+    float: left; 
+    margin-left: 1%; 
+    width: 5%; 
+}
