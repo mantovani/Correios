@@ -32,7 +32,6 @@ FOO
 
     print $fh $resposta;
     $fh->close;
-
 }
 
 1;

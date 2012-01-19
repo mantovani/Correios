@@ -26,7 +26,6 @@ sub pegar_status {
         eval { $ultimo = sro( $pedido->{pedido} ) };
         next if $@ || !$ultimo;
         if ( $self->correios_store->incluir_infos( $ultimo, $pedido->{_id} ) ) {
-            print "Enviar Email\n";
             $self->csm->enviar( $pedido->{email}, $ultimo, $pedido->{pedido} );
         }
     }
