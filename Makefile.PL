@@ -9,8 +9,10 @@ use Module::Install::Catalyst;    # Complain loudly if you don't have
 name 'Correios-Web';
 all_from 'lib/Correios/Web.pm';
 
+requires 'Data::Validate::Email';
+requires 'Catalyst::Plugin::Unicode::Encoding';
 requires 'WWW::Correios::SRO';
-requies 'MongoDB';
+requires 'MongoDB';
 requires 'Catalyst::Runtime' => '5.80032';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
