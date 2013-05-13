@@ -22,6 +22,7 @@ sub pegar_status {
     my $self   = shift;
     my $cursor = $self->correios_store->todos_elementos;
     while ( my $pedido = $cursor->next ) {
+		print "$pedido->{pedido}\n";
         my $ultimo;
         eval { $ultimo = sro( $pedido->{pedido} ) };
         next if $@ || !$ultimo;

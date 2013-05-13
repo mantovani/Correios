@@ -51,8 +51,10 @@ sub incluir_infos {
 
 sub update_infos {
     my ( $self, $oid ) = @_;
-    return $self->db->correios->registro->update( { _id => $oid },
-        { enviado => 1 } );
+    print "OID => {$oid}\n";
+    return $self->db->correios->registro->update(
+        { _id    => MongoDB::OID->new( value => "$oid" ) },
+        { '$set' => { enviado                => 1 } } );
 }
 
 1;
