@@ -30,7 +30,7 @@ Cadastra os itens
 
 sub cadastrar {
     my ( $self, $email, $pedido ) = @_;
-    if ( !$self->existe_cadastro( $email, $pedido ) ) {
+    if ( !$self->existe_cadastro( $email, $pedido ) && length($pedido) == 13 ) {
         $self->c->insert(
             { email => $email, pedido => $pedido, data => time } );
         return 1;

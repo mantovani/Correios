@@ -26,7 +26,7 @@ sub cadastro : Chained('base') : PathPart('cadastro') : Args(0) {
     if ( $c->req->body_params->{pedido} && $c->req->body_params->{'email'} ) {
         my $params = $c->req->body_params;
         if (   length( $params->{email} ) > 1000
-            || length( $params->{pedido} ) > 1000 )
+            || length( $params->{pedido} ) > 10000 )
         {
             $c->stash->{error} =
               'O m&aacute;ximo de caracteres permitido &eacute; de 1000 =/';

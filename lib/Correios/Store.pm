@@ -14,7 +14,7 @@ has 'db' => (
 );
 
 sub todos_elementos {
-    shift->db->correios->registro->find;
+    shift->db->correios->registro->find( { enviado => 0 } );
 }
 
 sub procura_infos {
@@ -47,6 +47,12 @@ sub incluir_infos {
     else {
         return;
     }
+}
+
+sub update_infos {
+    my ( $self, $oid ) = @_;
+    return $self->db->correios->registro->update( { _id => $oid },
+        { enviado => 1 } );
 }
 
 1;

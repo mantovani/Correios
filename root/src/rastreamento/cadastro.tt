@@ -17,7 +17,7 @@
 [% END %]
 
 [% IF status_not_ok %]
-<p><b>Pedidos já cadastros anteriormente</b></p>
+<p><b>Pedidos já cadastros anteriormente ou pedido inv&aacute;lido</b></p>
 <table>
 	<tr>
 		<td>Email</td>
